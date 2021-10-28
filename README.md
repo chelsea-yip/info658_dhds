@@ -14,6 +14,7 @@ df <- read_csv("[local_path_to_csv]/DHDS.csv")
 ```
 
 ### Disability Type by Region
+[Occurrences of Disability Types by HHS Region in 2019](https://github.com/chelsea-yip/info658_dhds/blob/main/disabilities_region.png?raw=true)
 ```
 # filter by HHS region, rows that describe a disability type, in 2019
 df_hhs_region <- df %>%
@@ -61,6 +62,7 @@ ggsave("images/disabilities_region.png",
 ```
 
 ### Disability by Age and Year
+[Occurrences of Disability by Age Group and Year 2016 - 2019](https://github.com/chelsea-yip/info658_dhds/blob/main/disability_age.png?raw=true)
 ```
 #see it by age, Stratification1 for these rows is only the any vs no disability indicator
 ggplot(df_age, aes(x = Stratification1, y = WeightedNumber, fill = Stratification1)) +
@@ -82,6 +84,7 @@ ggsave("images/disability_age.png",
 ```
 
 ### Disability by Sex and Year
+[Male and Female Occurrences of Disability 2016 - 2019](https://github.com/chelsea-yip/info658_dhds/blob/main/disability_sex.png?raw=true)
 ```
 df_sex <- df %>%
   filter(Stratification2 == "Male" | Stratification2 == "Female")
@@ -106,6 +109,7 @@ ggsave("images/disability_sex.png",
 ```
 
 ### Barriers by Cost of Health Care
+[Occurrences of Disability Where Patients Report Cost Barriers to Care in 2019](https://github.com/chelsea-yip/info658_dhds/blob/main/barriers_cost.png?raw=true)
 ```
 # filter for Barriers & Costs of Health Care
 df_barriers <- df %>%
